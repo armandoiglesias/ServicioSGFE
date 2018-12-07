@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ApiSigfe
 {
@@ -13,6 +14,8 @@ namespace ApiSigfe
 
             // Rutas de API web
             config.MapHttpAttributeRoutes();
+
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*")  );
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
